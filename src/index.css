@@ -28,10 +28,12 @@ body {
 	place-items: center;
 	/* min-width: 320px; */
 	/* max-height: 100vh; */
-  /* overflow: hidden; */
-  max-height: 100vh;
-  /* overflow: hidden; */
-
+	/* overflow: hidden; */
+	max-height: 100vh;
+	overflow: hidden;
+}
+html {
+	overflow-x: hidden;
 }
 
 h1 {
