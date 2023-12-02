@@ -50,7 +50,7 @@ const AdventCalendar = props => {
 		return <AdventCalendarWindow day={selectedDay} onReturn={handleReturn} />
 	}
 	return (
-		<div className='flex max-h-screen h-full py-5 flex-col w-full justify-start gap-2 items-center bg-black/50 overflow-hidden'>
+		<div className='flex max-h-screen h-full py-5 flex-col w-full justify-start gap-2 items-center bg-black/50 '>
 			<Snowfall
 				style={{
 					left: "50%",
