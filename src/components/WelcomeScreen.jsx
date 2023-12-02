@@ -31,7 +31,7 @@ function WelcomeScreen({ onEnter }) {
 						ease: "easeInOut",
 						repeatType: "reverse",
 					}}
-					src='./../belll.png'
+					src='./belll.png'
 					alt='wejdz'
 					className='w-32'
 				/>

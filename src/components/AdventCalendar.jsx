@@ -73,7 +73,7 @@ const AdventCalendar = props => {
 							ease: "easeInOut",
 							repeatType: "reverse",
 						}}
-						src='./../icon.png'
+						src='./icon.png'
 						alt='powrót'
 						className='w-1/5'
 					/>

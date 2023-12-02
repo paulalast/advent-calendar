@@ -46,7 +46,7 @@ const AdventCalendarWindow = ({ day, onReturn }) => {
 					className=' w-full flex justify-end bg-transparent hover:scale-125 hover:text-white  text-white transition-all  uppercase'
 				>
 					<motion.img
-						src='./../train.png'
+						src='./train.png'
 						alt='powrót'
 						className='w-48'
 						whileHover={{ scale: 1.05, rotate: 2 }}
