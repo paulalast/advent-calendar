@@ -7,9 +7,9 @@ function App() {
 	const [showCalendar, setShowCalendar] = useState(false)
 
 	return (
-		<div className='w-full h-screen overflow-hidden'>
+		<div className='w-full h-screen overflow-hidden flex justify-start items-start '>
 			{showCalendar ? (
-				<Calendar />
+				<Calendar onReturnToWelcome={() => setShowCalendar(false)} />
 			) : (
 				<WelcomeScreen onEnter={() => setShowCalendar(true)} />
 			)}

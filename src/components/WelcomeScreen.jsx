@@ -4,7 +4,7 @@ import Snowfall from "react-snowfall"
 
 function WelcomeScreen({ onEnter }) {
 	return (
-		<div className='flex flex-col w-full h-full justify-center gap-2 items-center '>
+		<div className='flex flex-col w-full h-full justify-center gap-8 items-center '>
 			<Snowfall
 				style={{
 					left: "50%",
@@ -15,13 +15,13 @@ function WelcomeScreen({ onEnter }) {
 				}}
 				snowflakeCount={800}
 			/>
-			<h1 className='text-4xl p-3 text-black bg-white/80 rounded-3xl font-headerFont font-bold uppercase shadow-lg'>
+			<h1 className='text-4xl p-3 text-black bg-white/90 rounded-3xl font-headerFont font-bold uppercase shadow-lg'>
 				Kalendarz Adwentowy
 			</h1>
 
 			<button
 				onClick={onEnter}
-				className=' text-xl bg-transparent  hover:scale-105  transition-transform'
+				className=' text-xl  rounded-full  hover:scale-105  transition-transform'
 			>
 				<motion.img
 					animate={{ scale: 1.2, rotate: 10 }}

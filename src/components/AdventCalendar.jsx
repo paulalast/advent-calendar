@@ -2,16 +2,16 @@ import React, { useState } from "react"
 import adventData from "../../adventData"
 import AdventCalendarWindow from "./AdventCalendarWindow"
 import Snowfall from "react-snowfall"
-import { motion, reverseEasing } from "framer-motion"
+import { motion } from "framer-motion"
 
 const AdventWindow = ({ src, alt, onOpen }) => {
 	return (
 		<button
 			onClick={onOpen}
-			className='bg-white/70 w-18 hover:bg-green hover:scale-105 transition-all shadow-md rounded-lg'
+			className='bg-white/90 w-[76px] h-[76px] hover:bg-green hover:scale-105 transition-all shadow-md rounded-full flex relative justify-center items-center'
 		>
 			<motion.img
-				animate={{ scale: 1.2, rotate: 10 }}
+				animate={{ scale: 1.15, rotate: 10 }}
 				transition={{
 					duration: 1,
 					repeat: Infinity,
@@ -20,13 +20,13 @@ const AdventWindow = ({ src, alt, onOpen }) => {
 				}}
 				src={src}
 				alt={alt}
-				className='w-8'
+				className='flex absolute object-cover w-9'
 			/>
 		</button>
 	)
 }
 
-const AdventCalendar = () => {
+const AdventCalendar = props => {
 	const [selectedDay, setSelectedDay] = useState(null)
 	const handleOpenDay = day => {
 		setSelectedDay(day)
@@ -34,11 +34,23 @@ const AdventCalendar = () => {
 	const handleReturn = () => {
 		setSelectedDay(null)
 	}
+	const handleReturnToWelcome = () => {
+		props.onReturnToWelcome()
+	}
+
+	if (selectedDay) {
+		return (
+			<AdventCalendarWindow
+				day={selectedDay}
+				onReturn={handleReturn}
+			/>
+		)
+	}
 	if (selectedDay) {
 		return <AdventCalendarWindow day={selectedDay} onReturn={handleReturn} />
 	}
 	return (
-		<div className='flex  flex-col w-full h-screen justify-start gap-2 items-center bg-black/60 overflow-hidden'>
+		<div className='flex max-h-screen h-full py-5 flex-col w-full justify-start gap-2 items-center bg-black/50 overflow-hidden'>
 			<Snowfall
 				style={{
 					left: "50%",
@@ -51,10 +63,24 @@ const AdventCalendar = () => {
 				radius={"13"}
 			/>
 
-			<h1 className='text-5xl  text-white  rounded-6xl font-headerFont uppercase  '>
-				Kalendarz Adwentowy
-			</h1>
-			<div className='flex justify-center flex-wrap gap-4 shadow-xl'>
+			<div className='flex mx-auto justify-center items-center text-3xl  text-green  rounded-6xl font-headerFont uppercase  bg-white/90 rounded-3xl w-10/12 shadow-inner '>
+				<button onClick={handleReturnToWelcome} className='flex justify-center items-center gap-2 '>
+					<motion.img
+						animate={{ scale: 1.1, rotate: 3 }}
+						transition={{
+							duration: 1,
+							repeat: Infinity,
+							ease: "easeInOut",
+							repeatType: "reverse",
+						}}
+						src='./src/assets/icon.png'
+						alt='powrót'
+						className='w-1/5'
+					/>
+					<p className='w-full text-3xl uppercase'>Kalendarz Adwentowy</p>
+				</button>
+			</div>
+			<div className='flex justify-center flex-wrap gap-3 shadow-xl'>
 				{Object.values(adventData).map((day, index) => (
 					<AdventWindow
 						key={index}
