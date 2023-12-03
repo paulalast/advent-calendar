@@ -36,6 +36,7 @@ function WelcomeScreen({ onEnter }) {
 					className='w-32'
 				/>
 			</button>
+			
 		</div>
 	)
 }
