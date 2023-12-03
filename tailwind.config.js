@@ -3,6 +3,10 @@ export default {
 	content: ["./app.jsx", "./src/**/*.{js,ts,jsx,tsx}"],
 	theme: {
 		extend: {
+			container: {
+				center: true,
+				
+			},
 			colors: {
 				green: "#005C00",
 				red: "#BA0C0C",

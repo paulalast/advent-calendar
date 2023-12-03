@@ -6,7 +6,7 @@ const AdventCalendarWindow = ({ day, onReturn }) => {
 	const controls = useAnimation()
 
 	useEffect(() => {
-		controls.start({ y: ["0%", "25%", "-10%"], x: "-70%" })
+		controls.start({ y: ["0%", "25%", "-10%"], x: "0%" })
 	}, [controls])
 
 	const handleHoverStart = () => {
@@ -19,7 +19,7 @@ const AdventCalendarWindow = ({ day, onReturn }) => {
 
 
 	return (
-		<div className=' flex w-screen max-w-[425px] flex-col h-full  py-2 justify-start items-center text-red gap-2 font-headerFont font-extrabold  shadow-2xl'>
+		<div className=' flex w-full flex-col  py-2 justify-center items-center text-red gap-2 font-headerFont font-extrabold'>
 			<Snowfall
 				style={{
 					left: "50%",
@@ -33,22 +33,22 @@ const AdventCalendarWindow = ({ day, onReturn }) => {
 			<div className='flex justify-center items-center shadow-xl rounded-full w-24 h-24 bg-white border-green border-4'>
 				<h4 className='text-6xl tracking-normal'>{day.id}</h4>
 			</div>
-			<div className='w-full flex flex-col justify-start items-center  '>
-				<div className='border-white border-8  flex flex-col justify-center items-center gap-6 w-3/4  bg-green py-16 rounded-xl shadow-lg font-[600] h-[430px]'>
+			<div className='w-full flex flex-col justify-center items-center   '>
+				<div className='border-white border-8  flex flex-col justify-center items-center gap-6  bg-green py-16 rounded-xl shadow-md font-[600] h-[430px] w-[290px]'>
 					<h3 className='text-2xl uppercase text-red bg-white p-2  text-center w-full'>
 						Zadanie
 					</h3>
-					<p className='text-white text-2xl py-2 px-2'>{day.task}</p>
+					<p className='text-white text-2xl py-2 px-2 w-11/12 text-center'>{day.task}</p>
 					<img src={day.imgTask} alt={day.alt} className='w-36' />
 				</div>
 				<button
 					onClick={onReturn}
-					className=' w-full flex justify-end bg-transparent hover:scale-125 hover:text-white  text-white transition-all  uppercase'
+					className=' flex justify-end bg-transparent hover:scale-125 hover:text-white  text-white transition-all  uppercase'
 				>
 					<motion.img
 						src='./train.png'
 						alt='powrót'
-						className='w-48'
+						className='w-48 '
 						whileHover={{ scale: 1.05, rotate: 2 }}
 						animate={controls}
 						initial={{ y: 0, x: 0 }}
