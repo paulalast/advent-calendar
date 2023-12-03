@@ -10,7 +10,7 @@ function WelcomeScreen({ onEnter }) {
 					left: "50%",
 					transform: "translateX(-50%)",
 					position: "absolute",
-					width: "50%",
+					width: "425px",
 					height: "100%",
 				}}
 				snowflakeCount={800}
