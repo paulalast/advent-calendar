@@ -38,7 +38,7 @@ function App() {
                     repeatType: "reverse",
                 }}
                 onClick={handlePlayMusic}
-                className='absolute bottom-0 w-32 h-32 bg-transparent'
+                className='absolute bottom-0 right-2 w-32 h-32 bg-transparent'
             >
                 <img src='./sound.png' alt={isPlaying ? 'pause' : 'play'} />
             </motion.button>
