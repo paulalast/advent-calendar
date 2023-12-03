@@ -8,8 +8,8 @@ const AdventWindow = ({ src, alt, onOpen, isToday }) => {
 	return (
 		<button
 			onClick={onOpen}
-			className={` w-[76px] h-[76px] hover:scale-105 transition-all shadow-md rounded-full flex relative justify-center items-center ${
-				isToday ? "border-green border-4 bg-red/90 scale-105" : "bg-white/90"
+			className={`  w-[76px] h-[76px] hover:scale-105 transition-all shadow-sm shadow-amber-200 rounded-full flex relative justify-center items-center ${
+				isToday ? " bg-[#F7C829] scale-105" : "bg-white/90"
 			}`}
 		>
 			<motion.img
@@ -60,7 +60,7 @@ const AdventCalendar = props => {
 					height: "100vh",
 					overflow: "hidden",
 				}}
-				snowflakeCount={700}
+				snowflakeCount={900}
 				radius={"13"}
 			/>
 

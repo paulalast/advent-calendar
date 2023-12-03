@@ -13,7 +13,7 @@ function WelcomeScreen({ onEnter }) {
 					width: "425px",
 					height: "100%",
 				}}
-				snowflakeCount={800}
+				snowflakeCount={1200}
 			/>
 			<h1 className='text-4xl text-center p-3 text-black bg-white/90 rounded-3xl font-headerFont font-bold uppercase shadow-lg '>
 				Kalendarz Adwentowy
