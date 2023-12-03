@@ -13,6 +13,8 @@ html {
 	height: 100vh;
 	display: flex;
 	/* overflow: hidden; */
+}
+body {
 	max-width: 425px;
 }
 html {
