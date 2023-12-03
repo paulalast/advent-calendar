@@ -16,6 +16,7 @@ html {
 }
 body {
 	max-width: 425px;
+	letter-spacing: 0.2rem;
 }
 html {
 	margin: 0 auto;
