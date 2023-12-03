@@ -14,7 +14,7 @@ const AdventCalendarWindow = ({ day, onReturn }) => {
 	}
 
 	const handleHoverEnd = () => {
-		controls.start({ y: ["0%", "25%", "-10%"], x: "-70%" })
+		controls.start({ y: ["0%", "25%", "-10%"], x: "-50%" })
 	}
 
 
