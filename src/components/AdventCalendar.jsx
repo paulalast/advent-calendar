@@ -50,7 +50,7 @@ const AdventCalendar = props => {
 	}
 
 	return (
-		<div className='container flex py-5 flex-col w-full h-full justify-start gap-2 items-start bg-black/50 '>
+		<div className='container flex py-5 flex-col w-full h-screen justify-start gap-2 items-start bg-black/50 '>
 			<Snowfall
 				style={{
 					left: "50%",
