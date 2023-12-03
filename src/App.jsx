@@ -13,9 +13,9 @@ function App() {
 			) : (
 				<WelcomeScreen onEnter={() => setShowCalendar(true)} />
 			)}
-			
-			<audio autoPlay loop>
-				<source src='./jingle.mp3' type='audio/mpeg' />
+
+			<audio autoPlay loop controls>
+				<source src='./jingle.mp3' type='audio/mpeg' autoPlay />
 			</audio>
 		</div>
 	)
