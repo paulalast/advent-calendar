@@ -8,7 +8,7 @@ const AdventWindow = ({ src, alt, onOpen, isToday }) => {
 	return (
 		<button
 			onClick={onOpen}
-			className={`  w-[76px] h-[76px] hover:scale-105 transition-all shadow-sm shadow-amber-200 rounded-full flex relative justify-center items-center ${
+			className={`  w-[72px] h-[72px] hover:scale-105 transition-all shadow-sm shadow-amber-200 rounded-full flex relative justify-center items-center ${
 				isToday ? " bg-[#F7C829] scale-105" : "bg-white/90"
 			}`}
 		>
@@ -50,7 +50,7 @@ const AdventCalendar = props => {
 	}
 
 	return (
-		<div className='container flex py-5 flex-col w-full h-screen justify-start gap-2 items-start bg-black/50 '>
+		<div className='container flex py-5 flex-col w-full min-h-screen justify-start gap-2 items-start bg-black/50 '>
 			<Snowfall
 				style={{
 					left: "50%",
@@ -64,7 +64,7 @@ const AdventCalendar = props => {
 				radius={"13"}
 			/>
 
-			<div className='flex mx-auto  text-3xl  text-green  rounded-6xl font-headerFont uppercase  bg-white/90 rounded-3xl w-11/12 shadow-inner '>
+			<div className='flex mx-auto  text-3xl  text-green  rounded-6xl font-headerFont uppercase  bg-white/90 rounded-3xl  w-11/12 shadow-inner '>
 				<button
 					onClick={handleReturnToWelcome}
 					className='flex justify-center items-center gap-2 '
@@ -81,10 +81,12 @@ const AdventCalendar = props => {
 						alt='powrót'
 						className='w-1/5'
 					/>
-					<p className='w-full text-3xl uppercase'>Kalendarz Adwentowy</p>
+					<p className='w-full text-2xl uppercase lg:text-3xl'>
+						Kalendarz Adwentowy
+					</p>
 				</button>
 			</div>
-			<div className='flex justify-center flex-wrap gap-3 shadow-xl'>
+			<div className='flex justify-center flex-wrap gap-3 md:gap-6 shadow-xl'>
 				{Object.values(adventData).map((day, index) => (
 					<AdventWindow
 						key={index}

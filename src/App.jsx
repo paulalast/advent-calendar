@@ -23,11 +23,11 @@ function App() {
     };
 
     return (
-        <div className='flex flex-col justify-evenly items-center relative h-screen'>
+        <div className='flex flex-col justify-evenly items-center relative h-screen '>
             {showCalendar ? (
                 <Calendar onReturnToWelcome={() => setShowCalendar(false)} />
             ) : (
-                <WelcomeScreen onEnter={() => setShowCalendar(true)} />
+                <WelcomeScreen onEnter={() => setShowCalendar(true)  } />
             )}
             <motion.button
                 animate={{ scale: 1.2, rotate: 5 }}
@@ -38,7 +38,7 @@ function App() {
                     repeatType: "reverse",
                 }}
                 onClick={handlePlayMusic}
-                className='absolute bottom-0 right-2 w-20 h-20 bg-transparent'
+                className='absolute top-5 right-2 w-20 h-20 bg-transparent'
             >
                 <img src='./sound.png' alt={isPlaying ? 'pause' : 'play'} />
             </motion.button>
