@@ -32,7 +32,7 @@ const adventData = {
 		alt: "alt",
 		id: 5,
 		task: "Przygotujcie poczęstunek dla Św. Mikołaja i Reniferów",
-		imgTask: "./src/assets/treat.jpg",
+		imgTask: "./treat.jpg",
 	},
 	day6: {
 		src: "./6.png",
