@@ -5,7 +5,7 @@
 
 	color-scheme: light dark;
 	color: rgba(255, 255, 255, 0.87);
-	background-color: #242424;
+	/* background-color: #242424; */
 
 	font-synthesis: none;
 	text-rendering: optimizeLegibility;
@@ -23,15 +23,14 @@
 } */
 html,
 body {
-  min-width: 320px;
-	width: 100%;
+	min-width: 320px;
+
 	overflow-x: hidden;
 }
 body {
 	margin: 0;
 	display: flex;
 	place-items: center;
-	
 }
 
 h1 {
@@ -51,6 +50,13 @@ button {
 	cursor: pointer;
 	transition: border-color 0.25s;
 }
+input,
+select {
+	background: white;
+	color: white;
+	padding: .5rem;
+	border-radius: 5px;
+}
 /* button:hover {
   border-color: #005C00;
 } */
@@ -59,7 +65,7 @@ button:focus-visible {
 	outline: 4px auto -webkit-focus-ring-color;
 } */
 
-@media (prefers-color-scheme: light) {
+/* @media (prefers-color-scheme: light) {
 	:root {
 		color: #213547;
 		background-color: #ffffff;
@@ -70,4 +76,4 @@ button:focus-visible {
 	button {
 		background-color: #f9f9f9;
 	}
-}
+} */

@@ -2,7 +2,7 @@ import React, { useEffect } from "react"
 import { motion, useAnimation } from "framer-motion"
 import Snowfall from "react-snowfall"
 
-const AdventCalendarWindow = ({ day, onReturn }) => {
+const AdventCalendarWindow = ({ day, onReturn, adventData }) => {
 	const controls = useAnimation()
 
 	useEffect(() => {
@@ -17,7 +17,6 @@ const AdventCalendarWindow = ({ day, onReturn }) => {
 		controls.start({ y: ["0%", "25%", "-10%"], x: "-50%" })
 	}
 
-
 	return (
 		<div className=' flex w-full flex-col py-4 justify-start h-full items-center text-red gap-2 font-headerFont font-extrabold'>
 			<Snowfall
@@ -27,7 +26,6 @@ const AdventCalendarWindow = ({ day, onReturn }) => {
 					position: "absolute",
 					width: "425px",
 					height: "100vh",
-                   
 				}}
 			/>
 			<div className='flex justify-center items-center shadow-xl rounded-full w-20 h-20 bg-white border-green border-4'>
@@ -38,8 +36,14 @@ const AdventCalendarWindow = ({ day, onReturn }) => {
 					<h3 className='text-2xl uppercase text-red bg-white p-2  text-center w-full'>
 						Zadanie
 					</h3>
-					<p className='text-white text-2xl py-2 px-2 w-11/12 text-center'>{day.task}</p>
-					<img src={day.imgTask} alt={day.alt} className='w-36' />
+					<p className='text-white text-2xl py-2 px-2 w-11/12 text-center'>
+						{adventData[`day${day.id}`].task}
+					</p>
+					<img
+						src={adventData[`day${day.id}`].imgTask}
+						alt={day.alt}
+						className='w-36'
+					/>
 				</div>
 				<button
 					onClick={onReturn}

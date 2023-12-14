@@ -46,7 +46,7 @@ const AdventCalendar = props => {
 	}
 
 	if (selectedDay) {
-		return <AdventCalendarWindow day={selectedDay} onReturn={handleReturn} />
+		return <AdventCalendarWindow day={selectedDay} onReturn={handleReturn}  adventData={props.adventData}  />
 	}
 
 	return (
@@ -94,6 +94,10 @@ const AdventCalendar = props => {
 						alt={day.alt}
 						onOpen={() => handleOpenDay(day)}
 						isToday={today === day.id}
+						updateTask={props.updateTask}
+						// day={selectedDay}
+						// onReturn={handleReturn}
+						// adventData={props.adventData}
 					/>
 				))}
 			</div>
