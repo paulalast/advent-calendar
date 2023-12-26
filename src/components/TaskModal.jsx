@@ -20,7 +20,6 @@ const TaskModal = ({ isOpen, onSave, onClose, selectedDay, adventData }) => {
 		onSave(day, task, adventData[`day${day}`].imgTask)
 		onClose()
 		setTask("")
-		console.log(day, task, adventData)
 	}
 
 	if (!isOpen) return null
