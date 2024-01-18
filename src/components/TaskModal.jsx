@@ -1,10 +1,17 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import adventData from "../../adventData"
 
 const TaskModal = ({ isOpen, onSave, onClose, selectedDay, adventData }) => {
 	const [task, setTask] = useState("")
 	const [image, setImage] = useState("")
-	const [day, setDay] = useState(1)
+	const [day, setDay] = useState(selectedDay || 1)
+
+	useEffect(() => {
+		if (adventData[`day${day}`]) {
+			setTask(adventData[`day${day}`].task)
+			setImage(adventData[`day${day}`].imgTask || "")
+		}
+	}, [day, adventData])
 
 	const handleImageChange = e => {
 		const file = e.target.files[0]
@@ -17,9 +24,14 @@ const TaskModal = ({ isOpen, onSave, onClose, selectedDay, adventData }) => {
 		}
 	}
 	const handleSave = () => {
-		onSave(day, task, adventData[`day${day}`].imgTask)
+		if (task.trim() === "") {
+			alert("Uzupełnij pole!")
+			return
+		}
+		onSave(day, task, image)
 		onClose()
 		setTask("")
+		setImage("")
 	}
 
 	if (!isOpen) return null
@@ -53,7 +65,7 @@ const TaskModal = ({ isOpen, onSave, onClose, selectedDay, adventData }) => {
 						type='text'
 						value={task}
 						onChange={e => setTask(e.target.value)}
-						placeholder='Wpisz zadanie'
+						placeholder={adventData[`day${day}`]?.task || "Wpisz treść zadania"}
 						className='p-2 w-full rounded-md text-green '
 					/>
 				</div>
@@ -62,9 +74,16 @@ const TaskModal = ({ isOpen, onSave, onClose, selectedDay, adventData }) => {
 					<input
 						type='file'
 						onChange={handleImageChange}
-						className='p-2 w-full rounded-md'
+						className='p-2 w-full rounded-md text-green text-sm'
 						id='image-input'
 					/>
+					<div className='w-full flex justify-center items-center py-2'>
+						<img
+							src={image || adventData[`day${day}`]?.imgTask}
+							alt={image || adventData[`day${day}`]?.alt}
+							className='flex justify-center z-20 w-1/3 shadow-md rounded-md'
+						/>
+					</div>
 				</div>
 
 				<button
